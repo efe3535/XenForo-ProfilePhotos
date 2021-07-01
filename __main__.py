@@ -11,7 +11,9 @@ except FileExistsError:
     print("Directory already exists, rename it.")
     exit()
 
-for member in range(1,5000):
+start = input("Which number would you like to start downloading?\t")
+stop = input("Which number would you like to stop downloading?\t")
+for member in range(int(start),int(stop)):
     #404 dönüyorsa üye profil fotoğrafı koymamış demektir.
     #404 dönüyorsa geç, 200 dönüyorsa indir
     if(member>999):
