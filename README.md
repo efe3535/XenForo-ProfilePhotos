@@ -1,8 +1,7 @@
 # XenForo-ProfilePhotos
 
-Gets first profile photos within a user-specified range at forums based on XenForo.
-\
-\
+Gets first profile photos within a user-specified range at forums based on XenForo.\
+
 ##  Usage:
 `        --url=<XenForo forum url to fetch profile photos>`\
 `        --dirname=<directory name to save images>`\
