@@ -11,8 +11,8 @@ except FileExistsError:
     print("Directory already exists, rename it.")
     exit()
 
-start = input("Which number would you like to start downloading?\t")
-stop = input("Which number would you like to stop downloading?\t")
+start = input("Which number would you like to start downloading at?\t")
+stop = input("Which number would you like to stop downloading at?\t")
 for member in range(int(start),int(stop)):
     #404 dönüyorsa üye profil fotoğrafı koymamış demektir.
     #404 dönüyorsa geç, 200 dönüyorsa indir
@@ -21,17 +21,17 @@ for member in range(int(start),int(stop)):
         temp_findmemberfolder = "".join(temp_findmemberfolder[:len(temp_findmemberfolder)-3])
         image = requests.get(f"https://www.technopat.net/sosyal/data/avatars/o/{temp_findmemberfolder}/{str(member)}.jpg",allow_redirects=True)
         if(image.status_code != 404):
-            print(Fore.GREEN + f"Success, {str(member)}. member has got a profile photo! 🥳" + Fore.RESET)
+            print(Fore.GREEN + f"Success, {str(member)}. member has a profile photo! 🥳" + Fore.RESET)
             saveimage=open(str(member)+".jpg","wb")
             saveimage.write(image.content)
         else:
-            print(Fore.RED + f"Unfortunately, {str(member)}. member hasn't got a profile photo 🙁" + Fore.RESET)
+            print(Fore.RED + f"Unfortunately, {str(member)}. member does not have a profile photo 🙁" + Fore.RESET)
     else:
         print(f"https://www.technopat.net/sosyal/data/avatars/o/0/{str(member)}.jpg")
         image = requests.get(f"https://www.technopat.net/sosyal/data/avatars/o/0/{str(member)}.jpg",allow_redirects=True)
         if(image.status_code != 404):
-            print(Fore.GREEN + f"Success, {str(member)}. member has got a profile photo 🥳" + Fore.RESET)
+            print(Fore.GREEN + f"Success, {str(member)}. member has a profile photo 🥳" + Fore.RESET)
             saveimage=open(str(member)+".jpg","wb")
             saveimage.write(image.content)
         else:
-            print(Fore.RED + f"Unfortunately, {str(member)}. member has not got a profile photo 🙁" + Fore.RESET)
+            print(Fore.RED + f"Unfortunately, {str(member)}. member does not have a profile photo 🙁" + Fore.RESET)
