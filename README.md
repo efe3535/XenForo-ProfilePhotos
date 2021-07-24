@@ -1,6 +1,5 @@
 # XenForo-ProfilePhotos
 
-# English:
 Gets first profile photos within a user-specified range at forums based on XenForo.
 
 Usage:
